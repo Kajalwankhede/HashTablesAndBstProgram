@@ -1,6 +1,7 @@
 package com.hashtableandtree;
 public class BinarySearchTree<K extends  Comparable<K>>{
     public class myBinaryNode {
+        public int data;
         K key;
         myBinaryNode left, right;
         public myBinaryNode(K value)
@@ -55,7 +56,21 @@ public class BinarySearchTree<K extends  Comparable<K>>{
         }
         return root;
     }
+public  boolean searchRecursivelyNode(int data){
+        return searchRecursivelyNode(data,root)!=null? true:false;
+}
+private myBinaryNode searchRecursivelyNode( int data,myBinaryNode root) {
+    if (root == null) {
+      return root;
+    } else if (root.data == data) {
+        return root;
 
+    } else if (data < root.data) {
+        return searchRecursivelyNode( data,root.left);
+    }
+
+    return  searchRecursivelyNode(data,root.right);
+}
 
     public void inorderDisplay() {
         System.out.println("Binary Search Tree Program ");
@@ -85,8 +100,10 @@ public class BinarySearchTree<K extends  Comparable<K>>{
         tree.insert(70);
         tree.insert(20);
         tree.insert(10);
-        tree.insert(5);
+        tree.insert(11);
         tree.inorderDisplay();
         System.out.println("The size of Binary search tree : "+tree.size());
+        tree.inorderDisplay();
+        System.out.println("Search Result: "+tree.searchRecursivelyNode(63));
     }
 }
