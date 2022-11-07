@@ -26,6 +26,15 @@ public class BinarySearchTree<K extends  Comparable<K>>{
         this.root = insertKey(this.root,key);
     }
 
+    int size(){
+        return  size(root); // function to return size of bst
+    }
+    int size(myBinaryNode root){
+        if (root==null)
+            return 0;
+        else
+            return (size(root.left)+1 +size(root.right));// compute no of nodes in tree
+    }
 
     public myBinaryNode insertKey(myBinaryNode root, K key) {   // A recursive function to insert a new key in BST
 
@@ -72,10 +81,12 @@ public class BinarySearchTree<K extends  Comparable<K>>{
 
         BinarySearchTree tree = new BinarySearchTree();
         tree.insert(56);
-
         tree.insert(30);
-
         tree.insert(70);
+        tree.insert(20);
+        tree.insert(10);
+        tree.insert(5);
         tree.inorderDisplay();
+        System.out.println("The size of Binary search tree : "+tree.size());
     }
 }
