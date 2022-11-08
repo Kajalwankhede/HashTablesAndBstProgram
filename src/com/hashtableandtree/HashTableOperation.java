@@ -72,11 +72,25 @@ public class HashTableOperation {
                 }
             }
         }
+    static void remove(String string, String word){
+        String msg[] =string.split(" "); //split string
+        String newString=" ";
+        for (String words : msg){ //iterating the string
+            if (!words.equals(word)){ // if word found
+                newString+=words+" ";// concat word not equal to given word
+            }
+        }
+        System.out.println(newString);
+
+    }
       public static void main(String[] args) {
         HashTableOperation hashTable = new HashTableOperation();
         System.out.println("HashTable Operation");
         String string = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         hashTableOperation(string,hashTable);
         hashTable.display();
+          System.out.println("\nAfter removing the word Avoidable from the Paragraph");
+          remove(string,"avoidable");
+          hashTable.display();
     }
     }
