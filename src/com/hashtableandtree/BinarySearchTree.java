@@ -104,6 +104,6 @@ private myBinaryNode searchRecursivelyNode( int data,myBinaryNode root) {
         tree.inorderDisplay();
         System.out.println("The size of Binary search tree : "+tree.size());
         tree.inorderDisplay();
-        System.out.println("Search Result: "+tree.searchRecursivelyNode(63));
+        System.out.println("Search Result: "+tree.searchRecursivelyNode(56));
     }
 }
